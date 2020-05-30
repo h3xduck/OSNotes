@@ -1,44 +1,5 @@
-# POSIX
+# POSIX for files and directories
 ## By Marcos Sánchez Bajo
-
-### **Fork**
-```c
-pid_t fork(void);
-```
-* Duplicates process invoking the call.
-* Parent process and child process go on running the same program.
-* Child process inherits open files from parent process.
-* Open file descriptors are copied.
-* Pending alarms are deactivated.
-* Returns:
-  * 1 on error.
-  * In parent process: child process descriptor.
-  * In child process: 0.
-
-### **Exec**
-Changes current process image.
-* path: path to executable file.
-* file: Looks for the executable file in all directories specified by PATH.̈
-* Description:
-  * Returns -1 on error, otherwise it does not return.
-  * The same process runs another program.
-  * Open files remain open.
-  * Signals with default action remain defaulted, signals with handler take defaultaction.
-```c
-int execl(constchar *path,constchar *arg, ...);
-int execv(constchar* path, char*constargv[]);
-int execve(constchar* path, char*constargv[], char*constenvp[]);
-int execvp(constchar *file, char *constargv[])
-```
-
-### **Exit**
-Finalizes process execution
-* All open files descriptors are closed.
-* All process resources are released.
-* PCB (Process Control Block) is released.
-```c
-void exit(status);
-```
 
 ## POSIX FOR FILES
 
