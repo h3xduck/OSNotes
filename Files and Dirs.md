@@ -50,9 +50,9 @@ int open(char *name, int flag, ...);
 * Arguments:
   * name: file name
   * flags: options for opening:
-    * nO_RDONLY: Read only
-    * nO_WRONLY: Write only
-    * nO_RDWR: Read/writen
+    * O_RDONLY: Read only
+    * O_WRONLY: Write only
+    * O_RDWR: Read/writen
     * O_APPEND: Access pointer moves to file end.
     * O_CREAT: If existing has no effect. If not existing creates.
     * O_TRUNCT: Truncates if open for writing.
